@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151515">
+  <meta name="description" content="Confira nosso cardápio de pizzas e faça seu pedido online.">
+
+  <title>Bella Pizza | Cardápio Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="logo" href="#inicio">
+      <span class="logo-icon">🍕</span>
+      <span>BELLA <strong>PIZZA</strong></span>
+    </a>
+
+    <a href="#cardapio" class="header-link">Ver cardápio ↓</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">FEITA COM CARINHO, SERVIDA QUENTINHA</span>
+        <h1>Seu próximo<br>pedaço de <span>felicidade.</span></h1>
+        <p>Ingredientes selecionados, massa especial e muito sabor em cada fatia.</p>
+        <a href="#cardapio" class="primary-button">Explorar cardápio →</a>
+        <div class="hero-note">🔥 Preparada na hora para você</div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ESCOLHA A SUA FAVORITA</span>
+          <h2>Nosso cardápio</h2>
+        </div>
+        <p>Qual vai ser a de hoje?</p>
+      </div>
+
+      <nav class="categories" aria-label="Categorias do cardápio">
+        <button class="category active" data-category="todas">Todas</button>
+        <button class="category" data-category="tradicionais">Tradicionais</button>
+        <button class="category" data-category="especiais">Especiais</button>
+        <button class="category" data-category="doces">Doces</button>
+        <button class="category" data-category="bebidas">Bebidas</button>
+      </nav>
+
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="promo">
+      <div>
+        <span class="eyebrow">A NOITE FICA MELHOR ASSIM</span>
+        <h2>Pizza quentinha.<br>Momentos especiais.</h2>
+        <p>Escolha seus sabores favoritos e faça seu pedido.</p>
+      </div>
+      <a href="#cardapio" class="primary-button">Pedir agora →</a>
+    </section>
+  </main>
+
+  <aside class="cart-bar" id="cart-bar" hidden>
+    <div>
+      <span id="cart-count">0 itens</span>
+      <strong id="cart-total">R$ 0,00</strong>
+    </div>
+    <button id="open-cart" class="primary-button">Ver pedido →</button>
+  </aside>
+
+  <dialog id="cart-dialog" class="cart-dialog">
+    <div class="dialog-heading">
+      <h2>Seu pedido</h2>
+      <button id="close-cart" class="close-button" aria-label="Fechar">✕</button>
+    </div>
+
+    <div id="cart-items" class="cart-items"></div>
+
+    <label class="field-label" for="customer-name">Seu nome</label>
+    <input id="customer-name" class="field" type="text" placeholder="Digite seu nome" maxlength="80">
+
+    <label class="field-label" for="customer-address">Endereço de entrega</label>
+    <textarea id="customer-address" class="field" placeholder="Rua, número e bairro" rows="2" maxlength="300"></textarea>
+
+    <label class="field-label" for="customer-notes">Observações (opcional)</label>
+    <textarea id="customer-notes" class="field" placeholder="Ex.: sem cebola, ponto de referência..." rows="2" maxlength="300"></textarea>
+
+    <div class="checkout-total">
+      <span>Total do pedido</span>
+      <strong id="dialog-total">R$ 0,00</strong>
+    </div>
+
+    <button id="checkout" class="primary-button checkout-button">
+      Finalizar pelo WhatsApp
+    </button>
+    <p class="small-note">O pedido será enviado para confirmação pela pizzaria.</p>
+  </dialog>
+
+  <footer>
+    <a class="logo footer-logo" href="#inicio">🍕 BELLA <strong>PIZZA</strong></a>
+    <p>Feito com sabor e carinho.</p>
+    <small>© <span id="year"></span> Bella Pizza. Todos os direitos reservados.</small>
+  </footer>
+
+</body>
+</html>
